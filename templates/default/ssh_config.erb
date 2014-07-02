@@ -1,0 +1,12 @@
+# This file was created by Chef
+# DO NOT EDIT MANUALLY
+# Nodes:
+<% @nodes.each do |n| %>
+<% unless n['ec2'].nil? or n['os'] == 'windows' %>
+Host <%= n['hostname'] %>
+    HostName <%= n['ec2']['public_hostname'] %>
+    User <%= node[:admin][:ssh_user] %>
+    IdentityFile <%= node[:admin][:identity_file] %>
+    IdentitiesOnly yes
+<% end %>
+<% end %>

@@ -1,0 +1,5 @@
+default[:admin][:ssh_conf_dir]  = "#{ENV['HOME']}/.ssh"
+default[:admin][:ssh_conf_file] = "config"
+default[:admin][:identity_file] = "#{ENV['HOME']}/.keys/key.pem"
+default[:admin][:ssh_user]      = "ubuntu"
+default[:admin][:chef_env]      = "production"
